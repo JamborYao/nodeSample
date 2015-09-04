@@ -1,0 +1,15 @@
+{
+  "name": "azureNode",
+  "version": "0.0.0",
+  "description": "azureNode",
+  "main": "app.js",
+  "author": {
+    "name": "v-jayao",
+    "email": ""
+  },
+  "dependencies": {
+    "express": "3.4.4",
+    "jade": "*",
+    "stylus": "*"
+  }
+}
