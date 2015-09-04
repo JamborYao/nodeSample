@@ -31,6 +31,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="app.js" />
+    <Compile Include="common.js" />
     <Compile Include="node_modules\.bin\express" />
     <Compile Include="node_modules\.bin\jade" />
     <Compile Include="node_modules\.bin\stylus" />
@@ -1382,6 +1383,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="bin\" />
+    <Folder Include="node_modules\" />
     <Folder Include="node_modules\.bin\" />
     <Folder Include="node_modules\express\" />
     <Folder Include="node_modules\express\bin\" />
