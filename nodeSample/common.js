@@ -20,7 +20,7 @@ readData = function (res) {
 
     }
     var connection = new sql.Connection(config, function (err) {
-        console.log(err.message);
+        
         var request = new sql.Request(connection); // or: var request = connection.request();  
         request.query('select * from [dbo].[Student]', function (err, recordset) {
             console.log(recordset);

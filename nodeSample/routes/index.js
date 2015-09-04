@@ -2,9 +2,9 @@
 /*
  * GET home page.
  */
-
+       var common = require('../common.js');
 exports.index = function (req, res) {
-    readData(res);
+    common.readData(res);
     res.render('index', { title: 'Express', year: new Date().getFullYear() });
 };
 
