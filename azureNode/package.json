@@ -9,8 +9,10 @@
   },
   "dependencies": {
     "azure-storage": "^0.5.0",
+    "body-parser": "^1.13.3",
     "express": "3.4.4",
     "jade": "*",
+    "mssql": "^2.2.0",
     "stylus": "*"
   }
 }
