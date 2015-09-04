@@ -36,6 +36,29 @@ readData = function (res) {
     server: 'tcp:gzh0e9hpef.database.windows.net,1433', // You can use 'localhost\\instance' to connect to named instance 
     database: 'janode'
 	}*/
+	  //var config = {
+    //    user: 'Azurelogin@qis4iqvic0.database.chinacloudapi.cn', 
+    //    password: '123Aking', 
+    //    server: 'qis4iqvic0.database.chinacloudapi.cn', // You can use 'localhost\\instance' to connect to named instance  
+    //    database: 'jambor' ,
+    //    options: {
+    //        encrypt: true, // Use this if you're on Windows Azure ,
+    //        //driver: 'SQL Server Native Client 11.0'
+    //    }
+
+    //}
+    var config = {
+        user: 'souser', 
+        password: '123456', 
+        server: 'stackoverflowdb1.chinacloudapp.cn', // You can use 'localhost\\instance' to connect to named instance  
+        database: 'sodb' ,
+        port:50001,
+        options: {
+            encrypt: true, // Use this if you're on Windows Azure ,
+            //driver: 'SQL Server Native Client 11.0'
+        }
+
+    }
 	var connection = new sql.Connection(config, function (err) {
         var request = new sql.Request(connection); // or: var request = connection.request(); 
         request.query('select * from [dbo].[Student]', function (err, recordset) {
