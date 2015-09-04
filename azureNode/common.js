@@ -49,7 +49,7 @@ readData = function (res) {
     //}
     var config = {
         user: 'souser', 
-        password: '123456', 
+        password: '***', 
         server: 'stackoverflowdb1.chinacloudapp.cn', // You can use 'localhost\\instance' to connect to named instance  
         database: 'sodb' ,
         port:50001,
