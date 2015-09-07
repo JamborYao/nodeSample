@@ -9,6 +9,7 @@ var common = require('./common.js');
 var http = require('http');
 var path = require('path');
 var bodyParser = require('body-parser');
+var fs = require("fs");
 
 
 var app = express();
@@ -51,6 +52,13 @@ app.post('/createStorage', function (req, res) {
     res.end();
 })
 
+app.get('/listUsers', function (req, res) {
+    fs.readFile(__dirname + "/" + "users.json", 'utf8', function (err, data) {
+        console.log(data);
+        res.end(data);
+    });
+})
+
 app.post('/list', function (req, res) {
     common.readData(res);
 	
@@ -59,3 +67,4 @@ app.post('/list', function (req, res) {
 http.createServer(app).listen(app.get('port'), function () {
     console.log('Express server listening on port ' + app.get('port'));
 });
+

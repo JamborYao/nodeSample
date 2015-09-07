@@ -46,7 +46,7 @@ readData = function (res) {
         request.query('select * from [dbo].[Blogs]', function (err, recordset) {
            // console.log(err.message);
             console.log(recordset);
-            console.log('11');
+          
             res.render('list', {
                 title: "Students information",
                 items: recordset,

@@ -43,7 +43,15 @@ block content
             input.btn.btn-info(type="submit", value="Generate SAS Url")
         .form-group
           label.col-sm-8.control-label #{content}
-    
-
+    .row
+      span#qqLoginBtn
+    Script.
+      QC.Login.insertButton({
+      btnId : 'qqLoginBtn',
+      size : 'A_XL',
+      clientId : '222222',
+      scope : '',
+      'btnMode':'showUserAfterLogin'
+        });
 
 
