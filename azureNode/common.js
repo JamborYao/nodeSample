@@ -32,28 +32,15 @@ readData = function (res) {
     
         options: {
             encrypt: true // Use this if you're on Windows Azure 
-        }
-
     }
-    
-    //var config = {
-    //    user: 'sa',
-    //    password: '111',
-    //    server: 'VDI-V-JAYAO', // You can use 'localhost\\instance' to connect to named instance 
-    //    database: 'nodeTest'
-    //}
-    //var students;
- //   var config = {
- //       user: 'jambor@gzh0e9hpef',
- //       password: '123Aking',
- //       server: 'tcp:gzh0e9hpef.database.windows.net,1433', // You can use 'localhost\\instance' to connect to named instance 
- //       database: 'janode',
- //       options: {
- //           encrypt: true // Use this if you're on Windows Azure 
- //       }
-
-	//}
-    var connection = new sql.Connection(config, function (err) {
+    var students;
+    /*	var config = {
+    user: 'jambor@gzh0e9hpef',
+    password: '123Aking',
+    server: 'tcp:gzh0e9hpef.database.windows.net,1433', // You can use 'localhost\\instance' to connect to named instance 
+    database: 'janode'
+	}*/
+	var connection = new sql.Connection(config, function (err) {
         console.log(err);
         var request = new sql.Request(connection); // or: var request = connection.request(); 
         request.query('select * from [dbo].[Blogs]', function (err, recordset) {
@@ -66,7 +53,7 @@ readData = function (res) {
                 content: 'hello world!'
             })
         });
-       
+	    
 
     });
     connection.on('error', function (err) {
