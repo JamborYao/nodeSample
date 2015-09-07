@@ -29,11 +29,11 @@ readData = function (res) {
         server: 'stackoverflowdb1.chinacloudapp.cn', // You can use 'localhost\\instance' to connect to named instance 
         database: 'sodb',
         port: 50001,
-    
+        
         options: {
             encrypt: true // Use this if you're on Windows Azure 
+        }
     }
-    var students;
     /*	var config = {
     user: 'jambor@gzh0e9hpef',
     password: '123Aking',
