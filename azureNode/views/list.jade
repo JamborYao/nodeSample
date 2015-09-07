@@ -5,18 +5,23 @@ block content
     .row
       h1 #{title}
     .row
-      table.table
+      table.table.table-bordered
         thead
           tr
-            th id
-            th name
-            th address
+            th Id
+            th Name
+            th Address
+            th Author
+            th Post Date
         tbody
           each item in items
             tr
-              td #{item.id}
-              td #{item.name}
-              td #{item.address}
+              td #{item.Id}
+              td #{item.Title}
+              td 
+                a(href="#{item.Url}") #{item.Url}
+              td #{item.Authur}
+              td #{item.PostDate}
 
       
           

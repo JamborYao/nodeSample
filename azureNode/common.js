@@ -24,29 +24,56 @@ createContainer = function (containername) {
 readData = function (res) {
     
     var config = {
-        user: 'sa',
-        password: '111',
-        server: 'VDI-V-JAYAO', // You can use 'localhost\\instance' to connect to named instance 
-        database: 'nodeTest'
+        user: 'souser',
+        password: '123456',
+        server: 'stackoverflowdb1.chinacloudapp.cn', // You can use 'localhost\\instance' to connect to named instance 
+        database: 'sodb',
+        port: 50001,
+    
+        options: {
+            encrypt: true // Use this if you're on Windows Azure 
+        }
+
     }
-    var students;
-    /*	var config = {
-    user: 'jambor@gzh0e9hpef',
-    password: '123Aking',
-    server: 'tcp:gzh0e9hpef.database.windows.net,1433', // You can use 'localhost\\instance' to connect to named instance 
-    database: 'janode'
-	}*/
-	var connection = new sql.Connection(config, function (err) {
+    
+    //var config = {
+    //    user: 'sa',
+    //    password: '111',
+    //    server: 'VDI-V-JAYAO', // You can use 'localhost\\instance' to connect to named instance 
+    //    database: 'nodeTest'
+    //}
+    //var students;
+ //   var config = {
+ //       user: 'jambor@gzh0e9hpef',
+ //       password: '123Aking',
+ //       server: 'tcp:gzh0e9hpef.database.windows.net,1433', // You can use 'localhost\\instance' to connect to named instance 
+ //       database: 'janode',
+ //       options: {
+ //           encrypt: true // Use this if you're on Windows Azure 
+ //       }
+
+	//}
+    var connection = new sql.Connection(config, function (err) {
+        console.log(err);
         var request = new sql.Request(connection); // or: var request = connection.request(); 
-        request.query('select * from [dbo].[Student]', function (err, recordset) {
+        request.query('select * from [dbo].[Blogs]', function (err, recordset) {
+           // console.log(err.message);
             console.log(recordset);
+            console.log('11');
             res.render('list', {
                 title: "Students information",
                 items: recordset,
                 content: 'hello world!'
             })
         });
-	    
+       
+
+    });
+    connection.on('error', function (err) {
+        res.render('error', {
+            content: err.message
+        })
+    // ... error handler 
     });
 
 
