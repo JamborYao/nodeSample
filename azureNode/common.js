@@ -21,6 +21,14 @@ createContainer = function (containername) {
     });
 }
 
+uploadFile = function () { 
+    blobService.createBlockBlobFromLocalFile('mycontainer', 'myblob', 'test.txt', function (error, result, response) {
+        if (!error) {
+    // file uploaded
+        }
+    });
+}
+
 readData = function (res) {
     
     var config = {
@@ -112,4 +120,5 @@ var generateSAS = function (res) {
 
 exports.createContainer = createContainer;
 exports.readData = readData;
-exports.generateSAS = generateSAS; 
+exports.generateSAS = generateSAS;
+exports.uploadFile = uploadFile;

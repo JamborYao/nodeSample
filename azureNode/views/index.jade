@@ -44,14 +44,11 @@ block content
         .form-group
           label.col-sm-8.control-label #{content}
     .row
-      span#qqLoginBtn
-    Script.
-      QC.Login.insertButton({
-      btnId : 'qqLoginBtn',
-      size : 'A_XL',
-      clientId : '222222',
-      scope : '',
-      'btnMode':'showUserAfterLogin'
-        });
+      form.form-horizontal(method='Post', action="/upload", role="form")
+        .form-group
+          .col-sm-offset-2.col-sm-4
+            input.btn.btn-info(type="submit", value="Upload file")
+        .form-group
+          label.col-sm-8.control-label #{content}
 
 
