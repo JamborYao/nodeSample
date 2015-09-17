@@ -22,9 +22,12 @@ createContainer = function (containername) {
 }
 
 uploadFile = function () { 
-    blobService.createBlockBlobFromLocalFile('mycontainer', 'myblob', 'test.txt', function (error, result, response) {
+    blobService.createBlockBlobFromLocalFile('mycontainer1', 'myblob', 'test.txt', function (error, result, response) {
         if (!error) {
     // file uploaded
+        }
+        else { 
+            console.log(error);
         }
     });
 }
