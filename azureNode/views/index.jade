@@ -50,5 +50,13 @@ block content
             input.btn.btn-info(type="submit", value="Upload file")
         .form-group
           label.col-sm-8.control-label #{content}
+    .row
+      form.form-horizontal(method='Post', enctype="multipart/form-data", action="/testdisk", role="form")
+        .form-group
+          .col-sm-offset-2.col-sm-4
+            input(type="file",name="avatar")
+            input.btn.btn-info(type="submit", value="Upload And Delete file")
+
+      
 
 

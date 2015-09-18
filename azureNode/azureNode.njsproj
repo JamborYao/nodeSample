@@ -63,6 +63,8 @@
     <Content Include="public\stylesheets\style.styl" />
     <Content Include="README.md" />
     <Content Include="test.txt" />
+    <Content Include="uploads\corstest.chinacloudsites.cn.PublishSettings" />
+    <Content Include="uploads\test.png" />
     <Content Include="users.json" />
     <Content Include="views\contact.jade" />
     <Content Include="views\about.jade" />
@@ -79,6 +81,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="bin\" />
+    <Folder Include="uploads\" />
     <Folder Include="public\" />
     <Folder Include="public\fonts\" />
     <Folder Include="public\images\" />

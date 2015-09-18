@@ -8,12 +8,16 @@
     "email": ""
   },
   "dependencies": {
+    "async": "^1.4.2",
     "azure-storage": "^0.5.0",
     "body-parser": "^1.13.3",
     "express": "3.4.4",
     "fs": "0.0.2",
     "jade": "*",
     "mssql": "^2.2.0",
+    "multer": "^1.0.3",
+    "multiparty": "^4.1.2",
+    "node-uuid": "^1.4.3",
     "stylus": "*"
   }
 }

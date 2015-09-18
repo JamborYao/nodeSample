@@ -121,7 +121,40 @@ var generateSAS = function (res) {
 	
 }
 
+
+var uploadAndDelete = function(request, response) {
+
+    var async = require('async');
+    
+    
+    blobService.createContainerIfNotExists('images', { publicAccessLevel: 'blob' }, function (error, result, blobresponse) {
+        if (error) {
+            response.status(500).send(error);
+        }
+        else {
+            var imageName = require('node-uuid').v1() + "_" + request.files.images.originalname;
+            
+            blobService.createBlockBlobFromLocalFile('images', imageName, request.files.images.path, function (error, result, blobimageresponse) {
+                if (error) {
+                    response.status(500).send(error);
+                }
+                else {
+                    var fs = require("fs");
+                    fs.unlink(item.imagepath, function (err) {
+                        if (err)
+                            response.status(500).send(err);
+                        else
+                            response.status(200).send("Success");
+                    });
+
+                }
+            });
+        }
+    });
+
+}
 exports.createContainer = createContainer;
 exports.readData = readData;
 exports.generateSAS = generateSAS;
 exports.uploadFile = uploadFile;
+exports.uploadAndDelete = uploadAndDelete;
